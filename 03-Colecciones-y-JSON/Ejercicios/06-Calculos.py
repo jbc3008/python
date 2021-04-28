@@ -14,7 +14,7 @@ impares = 0
 print(len(numeros))
 
 try:
-    while(len(numeros) < 11):
+    while(len(numeros) < 10):
         num = input("Dime un número: ")
         if(num.isdigit()):
             numeros.append(int(num))
