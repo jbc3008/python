@@ -47,26 +47,3 @@ class Alumno:
             return datetime.now().year - self.FechaNacimiento.year
 
 
-#Instanciamos el Objeto, se ejecuta la función constructor
-alumno = Alumno("Borja", "Cabeza", "Rozas")
-
-print(f"Me llamo: {alumno.Nombre} {alumno.Apellido1} {alumno.Apellido2}")
-print(f"Me llamo: {alumno.getNombreCompleto()}")
-
-#Invocamos a las funciones del objeto
-resultado = alumno.setFechaNacimiento("11-09-95")
-
-if (resultado == True):
-    print("Fecha asignada correctamente")
-else:
-    print("Error al asignar fecha")
-
-#alumno.setFechaNacimiento(input("Dime tu fecha de nacimiento: "))
-
-#fecha = input("Dime tu fecha de nacimiento: ")
-#alumno.setFechaNacimiento(fecha)
-
-if(alumno.getEdad() == -1):
-    print("La edad no se puede calcular")
-else:
-    print(f"Edad: {alumno.getEdad()} años")
