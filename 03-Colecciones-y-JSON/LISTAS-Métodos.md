@@ -1,6 +1,6 @@
 # Métodos de las Lista
 ### ***Python tiene un conjunto de métodos integrados que puede usar en listas.***
-
+&nbsp;
 | Método | Descripción |
 | ----------- | ----------- |
 | append(*value*) |  Agrega un elemento al final de la lista |

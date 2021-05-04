@@ -1,14 +1,3 @@
-#####################################################################
-# Clases                                                            #
-#####################################################################
-#                                                                   #
-#   Sintaxis: class [nombre de la clase]):                          #
-#                                                                   #
-#   Ejemplos:                                                       #
-#       class Alumno:                                               #    
-#                                                                   #
-#####################################################################
-
 from datetime import datetime
 
 #Creamos una clase utilizando class
