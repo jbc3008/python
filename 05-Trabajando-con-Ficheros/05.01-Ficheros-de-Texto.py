@@ -7,10 +7,10 @@
 #                                                                   #
 #   El objeto archivo tiene las funciones de lectura y escritura.   #
 #                                                                   #
-#   Sintaxis: open([ruta del fichero)                               #
+#   Sintaxis: open([ruta del fichero], [modo])                      #
 #                                                                   #
 #   Ejemplos:                                                       #
-#       file = open("fichero.txt")                                  #    
+#       file = open("fichero.txt", "rt")                            #    
 #                                                                   #
 #####################################################################
 
