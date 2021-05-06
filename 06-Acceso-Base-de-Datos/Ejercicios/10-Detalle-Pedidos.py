@@ -26,6 +26,12 @@ if(pedido != None):
     print("")
     # Buscamos el detalle del pedido
     detalle = details.find({ 'OrderID' :  idPedido })
+    print(f"===============================================================")
+    print(f"  {'Producto':<31} {'Cant. '} {'Precio':>10} {'Total':>10}")
+    print(f"===============================================================")
+
+    totalPedido = 0
+
     # Recorremos con While el curso del detalle del pedido
     while(detalle.alive):
         linea = detalle.next()
@@ -33,9 +39,16 @@ if(pedido != None):
         producto = products.find_one({ 'ProductID' : linea['ProductID']})
         # Mostramos cada linea de pedido
         # Descripción  -  cantidad  - precio  -  precio * cantidad
-        total = int(linea['Quantity']) * float(linea['UnitPrice'])
-        print(f"  {producto['ProductName']:<35} {linea['Quantity']:>6} {linea['UnitPrice']:>8} {total:>8}")
+        totalLinea = int(linea['Quantity']) * float(linea['UnitPrice'])
+        totalPedido += totalLinea
+
+        totalFormat = "{:0.2f}".format(totalLinea)
+
+        print(f"  {producto['ProductName']:<31} {linea['Quantity']:>6} {linea['UnitPrice']:>10} {totalFormat:>10}")
 
     #Mostar el importe total del pedido
+    print(f"===============================================================")
+    totalPedidoFormat = "{:0.2f}".format(totalPedido)
+    print(f"  {'TOTAL':>49} {totalPedidoFormat:>10}")
 else:
     print(f"El pedido {idPedido} no existe.")
