@@ -42,12 +42,12 @@ listProductos = productos.find({'UnitsInStock' : { '$ne': '0'}})
 #listProductos = productos.find()
 valorStock = 0
 for n in listProductos:
-    valorStock = valorStock + (float(n['UnitPrice']) * float(n['UnitsInStock']))
+    valorStock = valorStock + (float(n['UnitPrice']) * int(n['UnitsInStock']))
 
 print(f"\nValor del Stock: {valorStock:1.2f}")
 
 # Coste o Valor de nuestro Stock utilizand map() y sum()
-TotalStock = sum(list(map(lambda x: float(x['UnitPrice']) * float(n['UnitsInStock']) ,productos.find())))
+TotalStock = sum(list(map(lambda x: float(x['UnitPrice']) * int(x['UnitsInStock']), productos.find())))
 print(f"\nValor del Stock: {TotalStock:1.2f}")
 print("")
 
@@ -64,7 +64,7 @@ query = [
         'Total': { '$sum': { '$multiply': [ '$Price', '$Stock' ] } },
         'Items': { '$sum' : 1 }
         }
-    }      
+    }
 ]
 
 listProductos = productos.aggregate(query)
